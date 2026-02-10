@@ -1,12 +1,10 @@
 #main.py
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from api.config import settings
 from api.routers import brand
-from dotenv import load_dotenv
 
-# .env 파일 로드 (os.getenv 지원)
-load_dotenv()
 
 # FastAPI 앱 생성
 app = FastAPI(
