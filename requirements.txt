@@ -1,27 +1,45 @@
-# LangGraph 및 LangChain
+# ===============================
+# FastAPI Core
+# ===============================
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.6
+
+# ===============================
+# LangGraph / LangChain
+# ===============================
 langgraph>=0.0.40
 langchain>=0.1.0
 langchain-openai>=0.0.5
 
-# 데이터베이스
-sqlalchemy>=2.0.0
-psycopg2-binary>=2.9.0  # PostgreSQL (백엔드 사용 시)
-# pymysql>=1.1.0  # MySQL (대안)
-
+# ===============================
 # OpenAI
+# ===============================
 openai>=1.10.0
 
-# 유틸리티
+# ===============================
+# Database
+# ===============================
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0
+# pymysql>=1.1.0   # MySQL 사용할 경우 활성화
+
+# ===============================
+# Image Processing 🔥 (추가)
+# ===============================
+Pillow>=10.0.0
+cloudinary>=1.36.0
+
+# ===============================
+# Config / Utils
+# ===============================
 python-dotenv>=1.0.0
 pydantic>=2.0.0
+pydantic-settings>=2.0.0
 requests>=2.31.0
 
-# 개발 도구
+# ===============================
+# Dev Tools (선택)
+# ===============================
 pytest>=7.4.0
 black>=23.0.0
-
-# FastAPI
-fastapi>=0.109.0
-uvicorn[standard]>=0.27.0
-python-multipart>=0.0.6
-pydantic-settings>=2.0.0
