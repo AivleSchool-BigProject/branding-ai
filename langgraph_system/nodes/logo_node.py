@@ -13,7 +13,7 @@ def logo_node(state: BrandConsultingState) -> BrandConsultingState:
     Step 5: 로고 디자인 가이드 생성 + 이미지 자동 생성 + Report
     
     [Process]
-    1. GPT-4: 로고 컨셉 및 DALL-E 프롬프트 3가지 생성
+    1. GPT-5.1: 로고 컨셉 및 DALL-E 프롬프트 3가지 생성
     2. DALL-E 3: 생성된 3가지 프롬프트로 즉시 이미지 생성
     3. Brand Consulting Report: 최종 리포트 생성
     
@@ -71,12 +71,12 @@ def logo_node(state: BrandConsultingState) -> BrandConsultingState:
         feedback_section=feedback_section
     )
     
-    # 6. GPT-4 로고 컨셉 및 프롬프트 생성
+    # 6. GPT-5.1 로고 컨셉 및 프롬프트 생성
     logo_options = []
     try:
-        print("[Step 5] 1단계: GPT-4o 로고 프롬프트 작성 중...")
+        print("[Step 5] 1단계: GPT-5.1 로고 프롬프트 작성 중...")
         resp = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-5.1",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt}

@@ -49,11 +49,11 @@ def diagnosis_node(state: BrandConsultingState) -> BrandConsultingState:
         qa_data_json=json.dumps(step_1_qa, ensure_ascii=False, indent=2)
     )
     
-    # 5. GPT-4 호출
+    # 5. GPT-5.1 호출
     try:
-        print("[Step 1] GPT-4 비즈니스 진단 분석 중...")
+        print("[Step 1] GPT-5.1 비즈니스 진단 분석 중...")
         resp = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-5.1",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt}
@@ -64,7 +64,7 @@ def diagnosis_node(state: BrandConsultingState) -> BrandConsultingState:
         print("[Step 1] 분석 완료: 3가지 관점 및 핵심 요소 추출됨")
         
     except Exception as e:
-        print(f"[Step 1] ❌ GPT-4 분석 실패: {e}")
+        print(f"[Step 1] ❌ GPT-5.1 분석 실패: {e}")
         # 실패 시 기본값 (Fallback)
         analysis_data = {
             "summary": "분석 실패 (기본값)",

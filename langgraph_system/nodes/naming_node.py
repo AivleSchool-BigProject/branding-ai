@@ -92,9 +92,9 @@ def naming_node(state: BrandConsultingState) -> BrandConsultingState:
 
     # 5. GPT-4 모델 호출 (후보 생성)
     try:
-        print("[Step 2] GPT-4o 모델에 브랜드 네이밍 후보 3종 생성을 요청합니다...")
+        print("[Step 2] GPT-5.1 모델에 브랜드 네이밍 후보 3종 생성을 요청합니다...")
         resp = client.chat.completions.create(
-            model="gpt-4o",  # 최신 모델 사용
+            model="gpt-5.1",  # 최신 모델 사용
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt}
