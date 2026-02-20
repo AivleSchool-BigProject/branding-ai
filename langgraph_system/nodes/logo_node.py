@@ -14,7 +14,7 @@ def logo_node(state: BrandConsultingState) -> BrandConsultingState:
     
     [Process]
     1. GPT-5.1: 로고 컨셉 및 DALL-E 프롬프트 3가지 생성
-    2. DALL-E 3: 생성된 3가지 프롬프트로 즉시 이미지 생성
+    2. Gemini 3 Pro: 생성된 3가지 프롬프트로 즉시 이미지 생성
     3. Brand Consulting Report: 최종 리포트 생성
     
     [Output]
@@ -100,7 +100,6 @@ def logo_node(state: BrandConsultingState) -> BrandConsultingState:
         state["error_message"] = str(e)
         return state
 
-    # 7. DALL-E 3 이미지 생성 (순차 처리)
     output_id = state.get("output_id", "unknown")
     brand_name = naming_context.get("brand_name", "Brand")
     
@@ -113,7 +112,7 @@ def logo_node(state: BrandConsultingState) -> BrandConsultingState:
     logo_images_dir.mkdir(parents=True, exist_ok=True)
     
     # Wordmark 중심 프롬프트 생성 함수
-    def create_dalle_prompt(brand_name, style_keywords, color_palette,
+    def create_gemini_prompt(brand_name, style_keywords, color_palette,
                             benchmark_brand, visual_instruction, layout_type):
         """
         글로벌 기업 느낌의 로고 프롬프트 생성
@@ -188,7 +187,7 @@ The logo must look like a Fortune 100 brand identity.
         visual_instruction = opt.get("visual_instruction", f"The brand name '{brand_name}' written in bold sans-serif font. A small dot accent in the brand color.")
         
         # [수정] create_dalle_prompt 호출 (layout_type 추가)
-        dalle_prompt = create_dalle_prompt(
+        gemini_prompt = create_gemini_prompt(
             brand_name, 
             style_keywords, 
             color_palette, 
@@ -226,7 +225,7 @@ The logo must look like a Fortune 100 brand identity.
             
             response = gemini_client.models.generate_content(
                 model="gemini-3-pro-image-preview",
-                contents=[dalle_prompt],
+                contents=[gemini_prompt],
                 config=types.GenerateContentConfig(
                     response_modalities=['Image'],  # 이미지만 반환
                     image_config=types.ImageConfig(

@@ -17,7 +17,7 @@ def naming_node(state: BrandConsultingState) -> BrandConsultingState:
     - step_2_qa: 사용자 Naming 관련 질문에 대한 답변 (JSON)
     
     [처리 - Process]
-    - GPT-4를 활용하여 3가지 브랜드 네이밍 후보를 생성합니다.
+    - GPT-5.1를 활용하여 3가지 브랜드 네이밍 후보를 생성합니다.
     - 각 후보는 이름, 선정 이유(Rationale), 유사 대안(Alternatives)을 포함합니다.
     
     [출력 - Output]
@@ -90,7 +90,7 @@ def naming_node(state: BrandConsultingState) -> BrandConsultingState:
         feedback_section=feedback_section
     )
 
-    # 5. GPT-4 모델 호출 (후보 생성)
+    # 5. GPT-5.1 모델 호출 (후보 생성)
     try:
         print("[Step 2] GPT-5.1 모델에 브랜드 네이밍 후보 3종 생성을 요청합니다...")
         resp = client.chat.completions.create(

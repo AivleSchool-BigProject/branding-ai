@@ -19,7 +19,7 @@ def story_node(state: BrandConsultingState) -> BrandConsultingState:
     - step_4_qa: 사용자 Story 관련 답변 (JSON)
     
     [처리 - Process]
-    - GPT-4를 활용하여 3가지 버전의 브랜드 스토리 후보를 생성합니다.
+    - GPT-5.1를 활용하여 3가지 버전의 브랜드 스토리 후보를 생성합니다.
     - 각 후보는 서로 다른 톤앤매너(감성적, 기능적, 비전 중심 등)를 가집니다.
     
     [출력 - Output]
@@ -70,10 +70,10 @@ def story_node(state: BrandConsultingState) -> BrandConsultingState:
         state["error_message"] = error_msg
         return state
 
-    # 4. 프롬프트 구성 (JSON 직접 전달)
+    
     feedback_section = ""  # 재생성 기능 제거됨
 
-    # 5. 프롬프트 구성 (JSON 직접 전달)
+    # 4. 프롬프트 구성 (JSON 직접 전달)
     # 시스템 프롬프트: 역할 정의
     # 유저 프롬프트: 브랜드 맥락(Context), QA 데이터, 피드백 결합
     system_prompt = GenerationPrompts.STORY_SYSTEM

@@ -38,29 +38,29 @@ class GenerationPrompts:
        - Market Perspective: Market trends, competition, differentiation
        
     2. Core Insights:
-       - Diagnosis Summary: Overall brand status (2-3 sentences)
+       - Diagnosis Summary: Overall brand status (Brief, Natural tone)
        - Core Keywords: 3 keywords that best represent the brand
        - Target Persona: Descriptive name for core audience
-       - Brand Essence: One-sentence essence of the brand (for naming foundation)
-       - Emotional Core: Primary emotional trigger point (for concept development)
-       - Differentiation Point: Key competitive advantage summary (for storytelling)
+       - Brand Essence: One-sentence essence of the brand
+       - Emotional Core: Primary emotional trigger point
+       - Differentiation Point: Key competitive advantage summary
     
     [Output Format - JSON]
     {{
-      "summary": "Overall diagnosis in Korean...",
+      "summary": "Overall diagnosis in Korean (Natural tone, under 300 chars)...",
       "keywords": ["Keyword1", "Keyword2", "Keyword3"],
       "persona": "Target Persona",
       "perspectives": {{
-        "business_perspective": "Analysis in Korean...",
-        "user_perspective": "Analysis in Korean...",
-        "market_perspective": "Analysis in Korean..."
+        "business_perspective": "Analysis in Korean (Natural tone, under 300 chars)...",
+        "user_perspective": "Analysis in Korean (Natural tone, under 300 chars)...",
+        "market_perspective": "Analysis in Korean (Natural tone, under 300 chars)..."
       }},
       "brand_essence": "One-sentence brand essence in Korean",
       "emotional_core": "Primary emotional trigger in Korean",
       "differentiation_point": "Key competitive advantage in Korean"
     }}
     
-    IMPORTANT: All output values must be in KOREAN.
+    IMPORTANT: All text outputs must be in **KOREAN**, **Natural Human-like Tone**, and **Under 300 Characters**.
     """
 
     # Step 2: Naming
@@ -90,8 +90,8 @@ class GenerationPrompts:
     
     For each candidate, provide:
     - Brand Name: The proposed name (Korean or English as appropriate). NO HANJA.
-    - Rationale: Why this name fits the brand strategy (in Korean).
-    - Q&A Analysis Summary: Brief summary of how Q&A insights influenced this name (2-3 sentences in Korean).
+    - Rationale: Why this name fits the brand strategy (Korean, natural tone, max 300 chars).
+    - Q&A Analysis Summary: Brief summary of how Q&A insights influenced this name (Korean, natural tone, max 300 chars).
     - Q&A Keywords: 3-5 key terms extracted from Q&A that support this naming choice.
     
     [Output Format - JSON]
@@ -99,8 +99,8 @@ class GenerationPrompts:
       "options": [
         {{
           "brand_name": "Name1",
-          "name_rationale": "Reasoning in Korean...",
-          "qa_analysis_summary": "Q&A 분석 요약 (2-3문장)...",
+          "name_rationale": "Reasoning in Korean (Natural tone, <300 chars)...",
+          "qa_analysis_summary": "Q&A Analysis (Natural tone, <300 chars)...",
           "qa_keywords": ["키워드1", "키워드2", "키워드3"]
         }},
         ... (3 options total)
@@ -131,9 +131,9 @@ class GenerationPrompts:
     
     For each direction, provide:
     - Concept Statement: A catchy slogan or concept sentence.
-    - Rationale: The strategic reasoning behind this concept (in Korean).
+    - Rationale: The strategic reasoning behind this concept (Korean, natural tone, max 300 chars).
     - Brand Values: 3-5 core brand values that this concept embodies (in Korean).
-    - Q&A Analysis Summary: How Q&A insights shaped this concept (2-3 sentences in Korean).
+    - Q&A Analysis Summary: How Q&A insights shaped this concept (Korean, natural tone, max 300 chars).
     - Q&A Keywords: 3-5 key terms from Q&A that support this concept direction.
     
     [Output Format - JSON]
@@ -141,9 +141,9 @@ class GenerationPrompts:
       "options": [
         {{
           "concept_statement": "Concept Sentence in Korean",
-          "concept_rationale": "Reasoning in Korean...",
+          "concept_rationale": "Reasoning in Korean (Natural tone, <300 chars)...",
           "brand_values": ["가치1", "가치2", "가치3"],
-          "qa_analysis_summary": "Q&A 분석 요약 (2-3문장)...",
+          "qa_analysis_summary": "Q&A Analysis (Natural tone, <300 chars)...",
           "qa_keywords": ["키워드1", "키워드2", "키워드3"]
         }},
         ... (3 options total)
@@ -173,20 +173,20 @@ class GenerationPrompts:
     2. Write 3 different brand story variations.
     
     For each story, provide:
-    - Brand Story: The narrative (3-5 sentences in Korean). **IMPORTANT: Keep the brand name '{brand_name}' in ENGLISH, do not translate it to Korean.**
-    - Rationale: Why this storytelling approach works (in Korean).
+    - Brand Story: The narrative (Korean, natural tone, max 300 chars). **IMPORTANT: Keep the brand name '{brand_name}' in ENGLISH, do not translate it to Korean.**
+    - Rationale: Why this storytelling approach works (Korean, natural tone, max 300 chars).
     - Emotional Arc: The emotional journey of the story (e.g., "고민 → 발견 → 변화" in Korean).
-    - Q&A Analysis Summary: How Q&A insights influenced the story direction (2-3 sentences in Korean).
+    - Q&A Analysis Summary: How Q&A insights influenced the story direction (Korean, natural tone, max 300 chars).
     - Q&A Keywords: 3-5 key terms from Q&A that support this narrative.
     
     [Output Format - JSON]
     {{
       "options": [
         {{
-          "brand_story": "Story in Korean...",
-          "story_rationale": "Reasoning in Korean...",
+          "brand_story": "Story in Korean (Natural tone, <300 chars)...",
+          "story_rationale": "Reasoning in Korean (Natural tone, <300 chars)...",
           "emotional_arc": "감정 흐름 (예: 번아웃 → 자연과의 만남 → 회복)",
-          "qa_analysis_summary": "Q&A 분석 요약 (2-3문장)...",
+          "qa_analysis_summary": "Q&A Analysis (Natural tone, <300 chars)...",
           "qa_keywords": ["키워드1", "키워드2", "키워드3"]
         }},
         ... (3 options total)
